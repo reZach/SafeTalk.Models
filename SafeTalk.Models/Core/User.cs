@@ -7,11 +7,13 @@ namespace SafeTalk.Models
     {
         public string Guid { get; set; }
         public string Name { get; set; }
+        public List<string> IgnoreGuids { get; set; }
 
         public User()
         {
             Guid = System.Guid.NewGuid().ToString();
             Name = GenerateRandomName();
+            IgnoreGuids = new List<string>();
         }
 
         public static string GenerateRandomName()
